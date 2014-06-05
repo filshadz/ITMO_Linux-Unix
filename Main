@@ -15,5 +15,5 @@ cty=`cat /tmp/input.$$`
 
 MSG="Current Local Time in $cty is:  \n\n$time"
 
-$DIALOG --yesno "$MSG" 7 20 || end
+$DIALOG --yesno "$MSG" 8 35 || end
 	
