@@ -6,14 +6,14 @@ PORT=1234
 
 GETTEXT="gettext -d Main"
 
-which gdialog 2> /dev/null && DIALOG=gdialog || DIALOG=dialog
+#!/bin/sh
+zenity --entry --entry-text="type" --text "Please Enter Continent:" > /tmp/tmp1
+zenity --entry --entry-text="type" --text "Please Enter City" > /tmp/tmp2
 
-$DIALOG --inputbox "Please Enter Continent/City:" 8 35 2>/tmp/input.$$
 
-time=$(export TZ=`cat /tmp/input.$$`;date)
-cty=`cat /tmp/input.$$`
+input=`cat /tmp/tmp1 /tmp/tmp2`
 
-MSG="Current Local Time in $cty is:  \n\n$time"
+stringarray=($input)
 
-$DIALOG --yesno "$MSG" 8 35 || end
-	
+export TZ="${stringarray[0]}"/"${stringarray[1]}"
+zenity --info --text "Current Date and Time:\n`date`"
