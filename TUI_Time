@@ -8,21 +8,11 @@ echo `gettext -d timecl "Application stared. Press Ctrl+c to exit."`
  	echo `gettext -d timecl "Enter the city:"`
  	read C
  	ZONE="$Z/$C"
- 	# if OUTP=$(echo $ZONE | nc $HOST $PORT)
- 	# then
- 	# 	echo $OUTP
- 	if OUTP=$(echo $ZONE | nc $HOST $PORT)
- 	then
- 		if [ $OUTP = 0 2> /dev/null ]
- 		then
- 			TEXT=$(echo `gettext -d timecl "No such city or zone in the system. Refer to date TZ specs."`)
- 		else
- 			TEXT=$(echo `gettext -d timecl "The current time in this time zone is: "`)
- 			TEXT+=$(echo "	`gettext -d date "$OUTP"`")     # does not work :c
- 		fi
- 		echo $TEXT
- 	# else
- 	# 	echo "Server is not available at the host specified. Halting."
- 	# 	exit 2
- 	fi
+ 	
+ 			time=$(export TZ=`cat ZONE`;date)
+    cty=`cat /tmp/input.$$`
+ 		
+ 		echo '"Local Time in" $C, $S "is: " $time'
+ 
+ 	
 done
