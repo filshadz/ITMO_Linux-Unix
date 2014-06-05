@@ -7,12 +7,14 @@ echo `gettext -d timecl "Application stared. Press Ctrl+c to exit."`
  	read Z
  	echo `gettext -d timecl "Enter the city:"`
  	read C
- 	ZONE="$Z/$C"
+ 	/tmp/input.$$="$Z/$C"
  	
- 			time=$(export TZ=`cat ZONE`;date)
-    cty=`cat /tmp/input.$$`
- 		
- 		echo '"Local Time in $C, $Z is: $time"'
- 
+ 	time=$(export TZ=`cat /tmp/input.$$`;date)
+cty=`cat /tmp/input.$$`
+
+ 	
+ 	MSG="Local Time in $cty is:  \n\n$time"
+
+$DIALOG --yesno "$MSG" 7 20 || end
  	
 done
