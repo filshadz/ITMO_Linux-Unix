@@ -4,10 +4,10 @@ DIALOG=${DIALOG=dialog}
 
 $DIALOG --inputbox "Please Enter Continent/City:" 8 35 2>/tmp/city.$$
 
-now1=$(export TZ=`cat /tmp/city.$$`;date)
-na=`cat /tmp/city.$$`
+curr_time=$(export TZ=`cat /tmp/city.$$`;date)
+cty=`cat /tmp/city.$$`
 
-MSG="Current Local Time in $na is:  \n\n$now1"
+MSG="Current Local Time in $cty is:  \n\n$curr_time"
 
 $DIALOG --yesno "$MSG" 7 20 || end
 	
