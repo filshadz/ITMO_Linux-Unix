@@ -8,4 +8,4 @@ input=`cat /tmp/tmp1 /tmp/tmp2`
 stringarray=($input)
 
 export TZ="${stringarray[0]}"/"${stringarray[1]}"
-zenity --info --text "Current date and time is:\n`date`"
+zenity --info --text "Current Date and Time:\n`date`"
