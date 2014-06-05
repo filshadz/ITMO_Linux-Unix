@@ -7,7 +7,7 @@ $DIALOG --inputbox "Please Enter Continent/City:" 8 35 2>/tmp/input.$$
 time=$(export TZ=`cat /tmp/input.$$`;date)
 cty=`cat /tmp/input.$$`
 
-MSG="Current Local Time in $cty is:  \n\n$time"
+MSG="Local Time in $cty is:  \n\n$time"
 
 $DIALOG --yesno "$MSG" 7 20 || end
 	
