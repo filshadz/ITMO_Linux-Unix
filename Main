@@ -1,0 +1,18 @@
+#!/bin/sh
+
+TIME=timeTEXT
+HOST=localhost
+PORT=1234
+
+GETTEXT="gettext -d timeText_ui"
+
+which gdialog 2> /dev/null && DIALOG=gdialog || DIALOG=dialog
+
+$DIALOG --inputbox "Please Enter Continent/City:" 8 35 2>/tmp/city.$$
+
+now1=$(export TZ=`cat /tmp/city.$$`;date)
+na=`cat /tmp/city.$$`
+
+MSG="Current Local Time in $na is:  \n\n$now1"
+
+$DIALOG --yesno "$MSG" 7 20 || end
