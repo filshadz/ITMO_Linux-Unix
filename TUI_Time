@@ -12,7 +12,7 @@ echo `gettext -d timecl "Application stared. Press Ctrl+c to exit."`
  			time=$(export TZ=`cat ZONE`;date)
     cty=`cat /tmp/input.$$`
  		
- 		echo '"Local Time in" $C, $S "is: " $time'
+ 		echo '"Local Time in $C, $Z is: $time"'
  
  	
 done
