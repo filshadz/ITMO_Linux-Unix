@@ -1,20 +1,23 @@
 #!/bin/bash
 
-echo `gettext -d timecl "Application stared. Press Ctrl+c to exit."`
- while [ True ]
- do
- 	echo `gettext -d timecl "Enter the zone:"`
- 	read Z
- 	echo `gettext -d timecl "Enter the city:"`
- 	read C
- 	/tmp/input.$$="$Z/$C"
- 	
- 	time=$(export TZ=`cat /tmp/input.$$`;date)
-cty=`cat /tmp/input.$$`
+FILE1=/tmp/tzone-$$
 
- 	
- 	MSG="Local Time in $cty is:  \n\n$time"
+which gdialog 2> /dev/null && DIALOG=gdialog || DIALOG=dialog
 
-$DIALOG --yesno "$MSG" 7 20 || end
- 	
+end () {
+        rm -f $FILE1
+        exit
+        }
+while true
+do
+$DIALOG --title " Timezone" --clear \
+\
+        --inputbox "Please put your desired Continent/Country Name: " 25 59 4>$FILE1 || end
+        
+        ab=$(export TZ=`cat $FILE1.$$`;date)
+        
+        MSG="Now the time is: $ab \n\nContinue?"
+        
+        $DIALOG --yesno "$MSG" 7 20 || end
+        
 done
