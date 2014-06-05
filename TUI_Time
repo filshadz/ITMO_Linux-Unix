@@ -25,3 +25,4 @@ echo `gettext -d timecl "Application stared. Press Ctrl+c to exit."`
  	# 	echo "Server is not available at the host specified. Halting."
  	# 	exit 2
  	fi
+done
