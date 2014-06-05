@@ -21,5 +21,5 @@ msgid "Please Enter Continent/City:"
 msgstr "Kirjoita Maanosa/Kaupunki:"
 
 #: calc_ui:28
-msgid "Current Local Time in $na is:"
-msgstr "Nykyinen paikallista aikaa $na on"
+msgid "Current Local Time is:"
+msgstr "Nykyinen paikallinen aika on:"
