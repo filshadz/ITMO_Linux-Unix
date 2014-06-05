@@ -1,8 +1,10 @@
 #!/bin/sh
-zenity --entry --entry-text="type" --text "Insert Continent(Space)City" > /tmp/tmp1
-#dialog --title "test" --inputbox "Insert City" 100 100 2>/tmp/city
+zenity --entry --entry-text="type" --text "Please Enter Continent:" > /tmp/tmp1
+zenity --entry --entry-text="type" --text "Please Enter City" > /tmp/tmp2
 
-input=`cat /tmp/tmp1`
+
+input=`cat /tmp/tmp1 /tmp/tmp2`
+
 stringarray=($input)
 
 export TZ="${stringarray[0]}"/"${stringarray[1]}"
