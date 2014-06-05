@@ -1,16 +1,16 @@
-install: timeTxt_ui-fi.mo
-	install timeTXT timeTxt_ui /usr/local/bin
+install: Time-fi.mo
+	install TimeTxt Main /usr/local/bin
 	which gdialog >/dev/null 2>&1 || install gdialog /usr/local/bin
-	grep -q "`cat timeTXT.services`" /etc/services || cat timeTXT.services >> /etc/services
-	install timeTXT.xinetd /etc/xinetd.d/timeTXT
-	ln -sf /usr/local/bin/timeTxt_ui /usr/local/bin/ntimeText_ui
-	install timeTxt_ui-fi.mo /usr/share/locale/fi/LC_MESSAGES/timeTxt_ui.mo
+	grep -q "`cat TimeTxt.services`" /etc/services || cat TimeTxt.services >> /etc/services
+	install TimeTxt.xinetd /etc/xinetd.d/TimeTxt
+	ln -sf /usr/local/bin/Main /usr/local/bin/nMain
+	install Time-fi.mo /usr/share/locale/fi/LC_MESSAGES/Main.mo
 
-timeTxt_ui.pot: timeTxt_ui
-	xgettext -o timeTxt_ui.pot -L Shell timeText_ui
+Main.pot: Main
+	xgettext -o Main.pot -L Shell Main
 
-timeTxt_ui-fi.mo: timeTxt_ui-fi.po
-	msgfmt -o timeTxt_ui-fi.mo timeTxt_ui-fi.po
+Time-fi.mo: Time-fi.po
+	msgfmt -o Time-fi.mo Time-fi.po
 
 clone:
 	git clone https://github.com/filshadz/ITMO_Linux-Unix.git
