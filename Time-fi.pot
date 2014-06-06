@@ -4,8 +4,8 @@ msgstr ""
 
 #: calc_ui:24
 msgid "Please Enter Continent/City:"
-msgstr " "
+msgstr ""
 
 #: calc_ui:28
-msgid "Current Local Time is: "
-msgstr " "
+msgid "$cty Current Local Time is: "
+msgstr ""
