@@ -1,8 +1,12 @@
 #!/bin/sh
 
-export LANG=en.US.UTF-8
-echo "Please Enter Continent/City: "
-read continent_city
-set $continent_city
-export TZ="$continent_city"
-echo "$continent_city Local Time is now ";date
+zenity --entry --entry-text="type" --text "Please Enter Continent:" > /tmp/tmp1
+zenity --entry --entry-text="type" --text "Please Enter City" > /tmp/tmp2
+
+
+input=`cat /tmp/tmp1 /tmp/tmp2`
+
+stringarray=($input)
+
+export TZ="${stringarray[0]}"/"${stringarray[1]}"
+zenity --info --text "Current Date and Time:\n`date`"
