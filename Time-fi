@@ -44,18 +44,11 @@ MAIN="nc $HOST $PORT"
 while true
 do
 
-zenity --entry --entry-text="Type here" --text "Please Enter Continent:" > $FILE
-zenity --entry --entry-text="Type here" --text "Please Enter City:" > $FILE1|| end
+zenity --entry --entry-text="Type here" --text "Kirjoita Maanosa:" > $FILE
+zenity --entry --entry-text="Type here" --text "Kirjoita Maanosa:" > $FILE1|| end
 
 
-if cat $FILE | $FILE1 | $MAIN > $FILE2 2>$ERROR
-	then
-		zenity --info --title "`$GETTEXT \"Current Time and Date:\"`" --text "`cat $FILE2`"
-		zenity --question --title "" --text "`$GETTEXT \"Continue?\"`" || end
+		zenity --info --title "`$GETTEXT \"Nykyinen Päivämäärä Ja Aika:\"`" --text "`cat $FILE2`" || end
 
-	else
-		zenity --info --title "Alert" --text "`$GETTEXT \"Error: Service not running ??\"`"
-		exit -1
-	fi
 
 done
