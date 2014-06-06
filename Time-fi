@@ -44,8 +44,8 @@ MAIN="nc $HOST $PORT"
 while true
 do
 
-zenity --entry --entry-text="type" --text "Please Enter Continent:" > $FILE
-zenity --entry --entry-text="type" --text "Please Enter City:" > $FILE1|| end
+zenity --entry --entry-text="Type here" --text "Please Enter Continent:" > $FILE
+zenity --entry --entry-text="Type here" --text "Please Enter City:" > $FILE1|| end
 
 
 if cat $FILE | $FILE1 | $MAIN > $FILE2 2>$ERROR
