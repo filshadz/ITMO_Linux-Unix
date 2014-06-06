@@ -1,12 +1,12 @@
 install: TimeUI-fi.mo
-yum -y install dialog
-yum -y install xinetd
-yum -y install nc
-which gdialog >/dev/null 2>&1 || install gdialog /usr/local/bin
-install TimeTxt Time-fi GUI TUI /usr/local/bin
-grep -q "`cat TimeTxt.services`" /etc/services || cat TimeTxt.services >> /etc/services
-install TimeTxt.xinetd /etc/xinetd.d/TimeTxt
-/etc/init.d/xinetd restart
+		yum -y install dialog
+		yum -y install xinetd
+		yum -y install nc
+		which gdialog >/dev/null 2>&1 || install gdialog /usr/local/bin
+		install TimeTxt Time-fi GUI TUI /usr/local/bin
+		grep -q "`cat TimeTxt.services`" /etc/services || cat TimeTxt.services >> /etc/services
+		install TimeTxt.xinetd /etc/xinetd.d/TimeTxt
+		/etc/init.d/xinetd restart
 
 ln -sf /usr/local/bin/Time-fi /usr/local/bin/nTime-fi
 install TimeUI-fi.mo /usr/share/locale/fi/LC_MESSAGES/Time-fi.mo
