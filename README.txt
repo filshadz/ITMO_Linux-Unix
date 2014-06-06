@@ -1,10 +1,20 @@
-ITMO_Linux-Unix
-===============
-PERCCOM St Petersburg Seminar Linux/Unix Project - June 2014
 
-*Full name: Zainab Ifeoluwa Matemilola
+PERCCOM ITMO Linux/Unix Assignment - June 2014
 
-Program to display current date and time based the continent and city entered by a user.
+Full name: Zainab Ifeoluwa Matemilola
+
+Program to display current date and time based on the continent and city entered by a user.
 
 To run:
 ./Main [host[port] | --help]
+
+Details:
+---------
+
+1. Possibility for selecting of time zone and getting of current date & time for this TZ;
+2. TUI and GUI (mandatory);
+3. Networked client-service implementation (mandatory);
+4. Localization to your own language (mandatory).
+
+Note: For the 4th exercise, Finnish language is used.
+Run in Finnish Language by typing the command LANG=fi_FI ntimeText_ui
