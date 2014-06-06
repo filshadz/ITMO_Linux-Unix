@@ -1,14 +1,14 @@
 msgid ""
 msgstr ""
 
-#: Time-fi:47
-msgid "Please Enter Continent:"
-msgstr "Kirjoita Maanosa:"
+#: calc_ui:24
+msgid "Enter Continent/City:"
+msgstr "Anna maanosa / kaupunki:"
 
-#: Time-fi:48
-msgid "Please Enter City:"
-msgstr "Kirjoita Maanosa:"
+#: calc_ui:28
+msgid "Your time is:"
+msgstr "Aikasi on:"
 
-#: Time-fi:53
-msgid "Current Date and Time: "
-msgstr "Nykyinen paikallinen aika on:"
+
+
+
