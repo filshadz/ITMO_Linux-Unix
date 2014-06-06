@@ -1,4 +1,4 @@
-install: Time-fi.mo
+install: Time-FI.mo
 	yum -y install dialog
 	yum -y install xinetd
 	yum -y install nc
@@ -9,14 +9,14 @@ install: Time-fi.mo
 	/etc/init.d/xinetd restart
 	
 	ln -sf /usr/local/bin/Time-fi /usr/local/bin/nTime-fi
-	install Time-fi.mo /usr/share/locale/fi/LC_MESSAGES/Time-fi.mo
+	install Time-FI.mo /usr/share/locale/fi/LC_MESSAGES/Time-fi.mo
 
 
 	
-Main.pot: Main
+Time-fi.pot: Time-fi
 	xgettext -o Time-fi.pot -L Shell Main
 
-Time-fi.mo: Time-fi.po
+Time-FI.mo: Time-FI.po
 	msgfmt -o Time-fi.mo Time-fi.po
 
 clone:
