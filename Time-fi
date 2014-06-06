@@ -1,54 +1,21 @@
 #!/bin/sh
 
-HOST=localhost
-PORT=1234
-
-FILE=/tmp/main
-FILE1=/tmp/main1
-FILE2=/tmp/main2
-ERROR=/tmp/main-err
-
-GETTEXT="gettext -d Time-fi"
+GETTEXT="gettext -d timeText_ui"
 
 
-help () {
-        echo "Usage: $0 [ host [port] | --help ]"
-}
-
-end () {
-	rm -f $FILE $FILE1 $FILE2 $ERROR
-	exit
-}
-
-if [ $# -eq 1 ]
-then
-        if [ "$1" = "--help" ]
-        then
-                help
-                exit -1
-        else
-                HOST=$1
-        fi
-elif [ $# -eq 2 ]
-then
-        PORT=$2
-elif [ $# -ge 3 ]
-then
-	help
-	exit -1
-fi
+which gdialog 2> /dev/null && DIALOG=gdialog || DIALOG=dialog
 
 
-MAIN="nc $HOST $PORT"
-
-while true
-do
-
-zenity --entry --entry-text="Type here" --text "Kirjoita Maanosa:" > $FILE
-zenity --entry --entry-text="Type here" --text "Kirjoita Maanosa:" > $FILE1|| end
+$DIALOG --inputbox "`$GETTEXT \"Enter Continent:\"`" 8 35 2> /tmp/input.$$
+$DIALOG --inputbox "`$GETTEXT \"Enter City:\"`" 8 35 2> /tmp/input1.$$
 
 
-		zenity --info --title "`$GETTEXT \"Nykyinen Päivämäärä Ja Aika:\"`" --text "`cat $FILE2`" || end
+
+        now1=$(export TZ=`cat /tmp/input.$$ /tmp/input1.$$`;date)
+na=`cat /tmp/input1.$$`
+
+MSG="`$GETTEXT \"Your time is:\"` $now1"
+#MSG1="`$GETTEXT \"Hello $na, your time now is:\"` \n\n$now1\\n\\n"
+$DIALOG --yesno "$MSG" 7 20 || end
 
 
-done
