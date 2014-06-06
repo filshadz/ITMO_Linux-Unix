@@ -1,11 +1,11 @@
 # default: on
 # description: Time server
-service TimeTxt
+service GUI_Network
 {
 	flags		= REUSE
 	socket_type	= stream        
 	wait		= no
 	user		= nobody
-	server		= /usr/local/bin/TimeTxt
+	server		= /usr/local/bin/GUI_Network
 	disable		= no
 }
