@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 
 #: calc_ui:24
-msgid "Enter Continent/City:"
+msgid "Please Enter Continent/City:"
 msgstr ""
 
 #: calc_ui:28
-msgid "Hello $na, your time now is:"
+msgid "Current Time is:"
 msgstr ""
