@@ -1,11 +1,11 @@
 # default: on
 # description: The time server
-service timeTEXTGUI
+service TimeTxt
 {
 	flags = REUSE
 	socket_type = stream
 	wait = no
 	user = nobody
-       	server = /usr/local/bin/timeTEXTGUI
+       	server = /usr/local/bin/TimeTxt
         disable = no
 }
