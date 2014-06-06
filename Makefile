@@ -9,9 +9,6 @@ install: Time-fi.mo
 	ln -sf /usr/local/bin/Main /usr/local/bin/nMain
 	install Time-fi.mo /usr/share/locale/fi/LC_MESSAGES/Main.mo
 
-	ln -sf /usr/local/bin/timeText_ui /usr/local/bin/ntimeText_ui
-	install Time-fi.mo /usr/share/locale/fi/LC_MESSAGES/Main.mo
-	
 	
 Main.pot: Main
 	xgettext -o Main.pot -L Shell Main
