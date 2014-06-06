@@ -13,11 +13,11 @@ rm -f $na $now1
 exit
 }
 
-$DIALOG --inputbox "`$GETTEXT \"Enter Continent/City:\"`" 8 35 2> $na || end
+$DIALOG --inputbox "`$GETTEXT \"Please Enter Continent/City:\"`" 8 35 2> $na || end
 
         now1=$(export TZ=`cat $na`;date)
 na=$now1
 
-MSG="`$GETTEXT \"Your time is:\"` $now1"
-#MSG1="`$GETTEXT \"Hello $na, your time now is:\"` \n\n$now1\\n\\n"
+MSG="`$GETTEXT \"Current Time is:\"` $now1"
+
 $DIALOG --yesno "$MSG" 7 20 || end
