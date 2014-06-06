@@ -1,6 +1,7 @@
+
 #!/bin/sh
 
-na = /tmp/input.$$
+na=/tmp/input-$$
 
 GETTEXT="gettext -d Time-fi"
 
@@ -12,10 +13,10 @@ rm -f $na $now1
 exit
 }
 
-$DIALOG --inputbox "`$GETTEXT \"Please Enter Continent/City:\"`" 8 35 2> $na
+$DIALOG --inputbox "`$GETTEXT \"Enter Continent/City:\"`" 8 35 2> $na || end
 
         now1=$(export TZ=`cat $na`;date)
-na1=`cat $now1`
+na=$now1
 
 MSG="`$GETTEXT \"Your time is:\"` $now1"
 #MSG1="`$GETTEXT \"Hello $na, your time now is:\"` \n\n$now1\\n\\n"
