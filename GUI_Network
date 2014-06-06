@@ -1,0 +1,8 @@
+#!/bin/sh
+
+export LANG=en.US.UTF-8
+echo "Please Enter Continent/City: "
+read continent_city
+set $continent_city
+export TZ="$continent_city"
+echo "$continent_city Local Time is now ";date
