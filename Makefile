@@ -11,6 +11,11 @@ install: Time-fi.mo
 
 	ln -sf /usr/local/bin/timeText_ui /usr/local/bin/ntimeText_ui
 	install Time-fi.mo /usr/share/locale/fi/LC_MESSAGES/Main.mo
+	
+	chmod 755 GUI
+	chmod 755 TUI
+	chmod 755 Main
+	chmod 755 Main_Network
 
 Main.pot: Main
 	xgettext -o Main.pot -L Shell Main
