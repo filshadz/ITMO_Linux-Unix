@@ -11,7 +11,7 @@ install: Time-fi.mo
 
 	
 Main.pot: Main
-	xgettext -o Main.pot -L Shell Main
+	xgettext -o Time-fi.pot -L Shell Main
 
 Time-fi.mo: Time-fi.po
 	msgfmt -o Time-fi.mo Time-fi.po
