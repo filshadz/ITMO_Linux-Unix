@@ -13,7 +13,12 @@ Details:
 
 1. Possibility for selecting of time zone and getting of current date & time for this TZ;
 2. TUI and GUI (mandatory);
+To run:
+  chmod 755 TUI         chmod 755 GUI
+  ./TUI                 ./GUI
 3. Networked client-service implementation (mandatory);
+To run:
+  nc localhost 1234
 4. Localization to your own language (mandatory).
 
 Note: For the 4th exercise, Finnish language is used.
