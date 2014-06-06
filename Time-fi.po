@@ -17,9 +17,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 
-msgid ""
-msgstr ""
-
 #: Main:10
 msgid "Please Enter Continent:"
 msgstr "Kirjoita Maanosa:"
