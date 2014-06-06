@@ -1,7 +1,5 @@
 #!/bin/sh
 
-chmod +x GUI
-
 zenity --entry --entry-text="type" --text "Please Enter Continent:" > /tmp/tmp1
 zenity --entry --entry-text="type" --text "Please Enter City" > /tmp/tmp2
 
