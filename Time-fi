@@ -1,14 +1,61 @@
-msgid ""
-msgstr ""
+#!/bin/sh
 
-#: Main:10
-msgid "Please Enter Continent:"
-msgstr "Kirjoita Maanosa:"
+HOST=localhost
+PORT=1234
 
-#: Main:11
-msgid "Please Enter City:"
-msgstr "Kirjoita Maanosa:"
+FILE=/tmp/main
+FILE1=/tmp/main1
+FILE2=/tmp/main2
+ERROR=/tmp/main-err
 
-#: Main:19
-msgid "Current Date and Time in $input1: "
-msgstr "Nykyinen paikallinen aika on:"
+GETTEXT="gettext -d Time-fi"
+
+
+help () {
+        echo "Usage: $0 [ host [port] | --help ]"
+}
+
+end () {
+	rm -f $FILE $FILE1 $FILE2 $ERROR
+	exit
+}
+
+if [ $# -eq 1 ]
+then
+        if [ "$1" = "--help" ]
+        then
+                help
+                exit -1
+        else
+                HOST=$1
+        fi
+elif [ $# -eq 2 ]
+then
+        PORT=$2
+elif [ $# -ge 3 ]
+then
+	help
+	exit -1
+fi
+
+
+MAIN="nc $HOST $PORT"
+
+while true
+do
+
+zenity --entry --entry-text="type" --text "Please Enter Continent:" > $FILE
+zenity --entry --entry-text="type" --text "Please Enter City:" > $FILE1|| end
+
+
+if cat $FILE | $FILE1 | $MAIN > $FILE2 2>$ERROR
+	then
+		zenity --info --title "`$GETTEXT \"Current Time and Date:\"`" --text "`cat $FILE2`"
+		zenity --question --title "" --text "`$GETTEXT \"Continue?\"`" || end
+
+	else
+		zenity --info --title "Alert" --text "`$GETTEXT \"Error: Service not running ??\"`"
+		exit -1
+	fi
+
+done
