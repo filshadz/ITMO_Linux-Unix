@@ -17,7 +17,7 @@ Time-fi.pot: Time-fi
 	xgettext -o Time-fi.pot -L Shell Main
 
 Time-FI.mo: Time-FI.po
-	msgfmt -o Time-fi.mo Time-fi.po
+	msgfmt -o Time-FI.mo Time-FI.po
 
 clone:
 	git clone https://github.com/filshadz/ITMO_Linux-Unix.git
