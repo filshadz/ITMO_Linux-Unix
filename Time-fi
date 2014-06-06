@@ -6,15 +6,15 @@ GETTEXT="gettext -d timeText_ui"
 which gdialog 2> /dev/null && DIALOG=gdialog || DIALOG=dialog
 
 
-$DIALOG --inputbox "`$GETTEXT \"Enter Continent:\"`" 8 35 2> /tmp/input.$$
-$DIALOG --inputbox "`$GETTEXT \"Enter City:\"`" 8 35 2> /tmp/input1.$$
+$DIALOG --inputbox "`$GETTEXT \"Please Enter Continent:\"`" 8 35 2> /tmp/input.$$
+$DIALOG --inputbox "`$GETTEXT \"Please Enter City:\"`" 8 35 2> /tmp/input1.$$
 
 
 
         now1=$(export TZ=`cat /tmp/input.$$ /tmp/input1.$$`;date)
 na=`cat /tmp/input1.$$`
 
-MSG="`$GETTEXT \"Your time is:\"` $now1"
+MSG="`$GETTEXT \"Current Date and Time: \"` $now1"
 #MSG1="`$GETTEXT \"Hello $na, your time now is:\"` \n\n$now1\\n\\n"
 $DIALOG --yesno "$MSG" 7 20 || end
 
