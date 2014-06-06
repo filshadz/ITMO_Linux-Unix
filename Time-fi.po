@@ -28,6 +28,6 @@ msgstr "Kirjoita Maanosa:"
 msgid "Please Enter City:"
 msgstr "Kirjoita Maanosa:"
 
-#: Main:28
+#: Main:19
 msgid "Current Date and Time in $input1:: "
 msgstr "Nykyinen paikallinen aika on:"
