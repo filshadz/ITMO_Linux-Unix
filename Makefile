@@ -6,7 +6,7 @@ install: Time-fi.mo
 	which gdialog >/dev/null 2>&1 || install gdialog /usr/local/bin
 	grep -q "`cat TimeTxt.services`" /etc/services || cat TimeTxt.services >> /etc/services
 	install TimeTxt.xinetd /etc/xinetd.d/TimeTxt
-	ln -sf /usr/local/bin/Text-fi /usr/local/bin/nText-fi
+	ln -sf /usr/local/bin/Time-fi /usr/local/bin/nTime-fi
 	install Time-fi.mo /usr/share/locale/fi/LC_MESSAGES/Main.mo
 
 
