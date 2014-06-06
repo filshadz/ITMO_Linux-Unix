@@ -6,7 +6,7 @@ Full name: Zainab Ifeoluwa Matemilola
 Program to display current date and time based on the continent and city entered by a user.
 
 To run:
-./Main [host[port] | --help]
+./Main 
 
 Details:
 ---------
