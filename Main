@@ -8,7 +8,7 @@ GETTEXT="gettext -d Main"
 
 #!/bin/sh
 zenity --entry --entry-text="type" --text "Please Enter Continent:" > /tmp/tmp1
-zenity --entry --entry-text="type" --text "Please Enter City" > /tmp/tmp2
+zenity --entry --entry-text="type" --text "Please Enter City:" > /tmp/tmp2
 
 
 input=`cat /tmp/tmp1 /tmp/tmp2`
