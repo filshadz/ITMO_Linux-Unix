@@ -1,15 +1,12 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2012 Oleg Sadov
-# This file is distributed under the same license as the CALC package.
-# Oleg Sadov <sadov@linux-ink.ru>, 2012.
 
 msgid " "
 msgstr " "
 
+
 #: calc_ui:24
-msgid "Enter Continent/City:"
-msgstr "Anna Continent / kaupunki:"
+msgid "Please Enter Continent/City:"
+msgstr "Kirjoita Maanosa/Kaupunki:"
 
 #: calc_ui:28
-msgid "Your time is:"
-msgstr "Aikasi on:"
+msgid "Current Local Time is: "
+msgstr "Nykyinen paikallinen aika on:"
