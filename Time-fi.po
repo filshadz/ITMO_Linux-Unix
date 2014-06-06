@@ -17,14 +17,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 
-#: Main:10
+#: Time-fi:47
 msgid "Please Enter Continent:"
 msgstr "Kirjoita Maanosa:"
 
-#: Main:11
+#: Time-fi:48
 msgid "Please Enter City:"
 msgstr "Kirjoita Maanosa:"
 
-#: Main:19
-msgid "Current Date and Time in $input1:: "
+#: Time-fi:53
+msgid "Current Date and Time: "
 msgstr "Nykyinen paikallinen aika on:"
